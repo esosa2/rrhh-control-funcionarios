@@ -44,7 +44,7 @@ docker-compose up --build
 
 Este comando construirá las imágenes necesarias y levantará los contenedores para el **frontend** y **backend**.
 
-- **Frontend** estará disponible en `http://localhost:3000`.
+- **Frontend** estará disponible en `http://localhost:3000`. Es importante notar que el frontend es una aplicación React que corre en modo desarrollo, lo que significa que puede tardar un poco en cargar en el navegador debido al entorno de desarrollo de Node.js y React. Una vez que cargue, lo que observarás en el navegador es la interfaz de usuario del frontend.
 - **Backend** estará disponible en `http://localhost:8001`.
 
 ## Detener los Contenedores
