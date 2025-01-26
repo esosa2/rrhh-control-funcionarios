@@ -1,55 +1,54 @@
-# RRHH Control - Setup con Docker Compose
 
-Este repositorio contiene los submódulos necesarios para levantar un sistema de control de RRHH que incluye frontend, backend y base de datos. Aquí encontrarás los pasos para clonar, configurar y ejecutar el proyecto utilizando Docker Compose.
+# Sistema de RRHH de control - Docker Compose
 
-## Requisitos Previos
+Este es un proyecto que incluye dos submódulos, uno para el **frontend** y otro para el **backend**, y está orquestado con **Docker Compose** para facilitar su ejecución.
 
-1. Tener instalado [Docker](https://www.docker.com/) y [Docker Compose](https://docs.docker.com/compose/).
-2. Tener configurado Git en tu máquina local.
+## Repositorios
 
-## Pasos de Configuración
+- **Frontend**: Este repositorio contiene el código para la aplicación frontend, desarrollada con **React** y **TypeScript**. Puedes encontrar el repositorio aquí: [Frontend Repo](<https://github.com/esosa2/rrhh-control-fe>)
+- **Backend**: Este repositorio contiene la API backend, desarrollada con **Node.js**, **Express** y **TypeScript**. Puedes encontrar el repositorio aquí: [Backend Repo](<https://github.com/esosa2/rrhh-control-be>)
 
-### 1. Clonar el repositorio principal
-Clona este repositorio utilizando el siguiente comando:
+Ambos proyectos se gestionan como submódulos dentro de este repositorio, lo que facilita su integración y ejecución conjunta.
+
+## Clonar el Repositorio
+
+Para clonar este proyecto y sus submódulos, utiliza el siguiente comando:
 
 ```bash
-git clone --recurse-submodules <URL_DEL_REPOSITORIO>
+git clone --recurse-submodules https://github.com/esosa2/rrhh-control-funcionarios.git
 ```
 
-Si ya has clonado el repositorio y necesitas actualizar los submódulos, utiliza:
+Si ya has clonado el repositorio sin los submódulos, puedes inicializarlos y actualizarlos con:
 
 ```bash
 git submodule update --init --recursive
 ```
 
-### 2. Configurar archivos necesarios
-Asegúrate de que los submódulos `frontend` y `backend` contienen sus respectivos `Dockerfile` correctamente configurados.
+Esto descargará el código tanto del **frontend** como del **backend**.
 
-Si necesitas realizar cambios, asegúrate de volver a construir las imágenes con el comando que aparece en el paso
+## Ejecutar con Docker
 
-### 3. Construir y levantar los servicios
-Ejecuta el siguiente comando en la raíz del proyecto para construir las imágenes y levantar los servicios:
+Una vez que hayas clonado el repositorio y actualizado los submódulos, puedes ejecutar el proyecto con Docker Compose utilizando el siguiente comando:
 
 ```bash
-docker compose up --build
+docker-compose up --build
 ```
 
-Esto levantará los servicios en los siguientes puertos predeterminados:
-- Frontend: [http://localhost:3000](http://localhost:3000)
-- Backend: [http://localhost:8001](http://localhost:8001)
-- Base de datos (PostgreSQL): puerto 5432
+Este comando construirá las imágenes necesarias y levantará los contenedores para el **frontend** y **backend**.
 
-### 4. Detener los servicios
-Para detener y eliminar los contenedores (sin afectar los datos persistentes), utiliza:
+- **Frontend** estará disponible en `http://localhost:3000`.
+- **Backend** estará disponible en `http://localhost:8001`.
+
+## Detener los Contenedores
+
+Para detener los contenedores, puedes usar:
 
 ```bash
-docker compose down
+docker-compose down
 ```
 
-Si deseas eliminar los contenedores, redes y volúmenes asociados:
+Este comando detendrá y eliminará los contenedores, redes y volúmenes creados por Docker Compose.
 
-```bash
-docker compose down -v
-```
+---
 
-
+Este proyecto ya está listo para ejecutarse, solo debes seguir los pasos para clonar y levantar los contenedores. ¡Todo lo demás está configurado dentro del `docker-compose.yml`!
