@@ -59,4 +59,4 @@ Este comando detendrá y eliminará los contenedores, redes y volúmenes creados
 
 ---
 
-Este proyecto ya está listo para ejecutarse, solo debes seguir los pasos para clonar y levantar los contenedores. ¡Todo lo demás está configurado dentro del `docker-compose.yml`!
+Este proyecto ya está listo para ejecutarse, solo debes seguir los pasos para clonar y levantar los contenedores. Todo lo demás está configurado dentro del `docker-compose.yml`.
