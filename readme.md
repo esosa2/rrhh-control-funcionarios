@@ -10,6 +10,14 @@ Este es un proyecto que incluye dos submódulos, uno para el **frontend** y otro
 
 Ambos proyectos se gestionan como submódulos dentro de este repositorio, lo que facilita su integración y ejecución conjunta.
 
+## Base de Datos PostgreSQL
+
+Este proyecto incluye una base de datos **PostgreSQL** que se inicializa automáticamente al levantar los contenedores con Docker Compose. El archivo `postgres-init/init.sql` contiene el script de inicialización necesario para configurar la base de datos con las tablas y datos iniciales requeridos.
+
+### Estructura de la Base de Datos
+
+El script de inicialización (`init.sql`) se ejecuta al iniciar el contenedor de PostgreSQL y configura la base de datos de acuerdo con los requisitos del proyecto. No es necesario realizar ninguna configuración adicional para la base de datos, ya que todo está automatizado en el proceso de arranque de Docker.
+
 ## Clonar el Repositorio
 
 Para clonar este proyecto y sus submódulos, utiliza el siguiente comando:
